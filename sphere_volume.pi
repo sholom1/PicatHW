@@ -1,0 +1,5 @@
+import math.
+main =>
+    println(volume(5)).
+
+volume(R) = Volume => 3 / 4 * pi * R**3.
