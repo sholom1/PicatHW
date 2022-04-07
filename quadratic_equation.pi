@@ -1,0 +1,8 @@
+main =>
+    println(quadratic(1, 5, 2)).
+
+quadratic(A, B, C) = (Root1, Root2),
+    D = B**2 - 4*A*C,
+    D >= 0 =>
+        Root1 = (-B+sqrt(D)) / 2*A,
+        Root2 = (-B-sqrt(D)) / 2*A.
