@@ -1,4 +1,3 @@
-import math.
 main =>
     println(volume(5)).
 
