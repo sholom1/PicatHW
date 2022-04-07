@@ -1,0 +1,4 @@
+main =>
+    println(number_of_zeros([1,0,1,3,0,1])).
+
+number_of_zeros(L) = sum([1:0 in L])
