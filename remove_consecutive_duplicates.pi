@@ -1,0 +1,8 @@
+main =>
+    println(remove_consecutive_duplicates([1, 1, 2, 2, a, a, a, b, b, c])).
+
+remove_consecutive_duplicates([]) = [].
+remove_consecutive_duplicates([H|T]) = [H|remove_consecutive_duplicates(H, T)].
+remove_consecutive_duplicates(_, []) = [].
+remove_consecutive_duplicates(X,[X|T]) = remove_consecutive_duplicates(X,T).
+remove_consecutive_duplicates(_,[Y|T]) = [Y|remove_consecutive_duplicates(Y,T)]
