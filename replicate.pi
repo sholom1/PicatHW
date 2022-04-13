@@ -1,0 +1,4 @@
+main =>
+    println(replicate([1,2,3], 3)).
+
+replicate(A, N) = [X : X in A, I in 1..N].
