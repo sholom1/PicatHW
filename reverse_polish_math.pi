@@ -1,0 +1,9 @@
+main =>
+    println(polish_math([3, 4, '+', 5, '*'])),
+    println(polish_math([1, 3, '+', 5, 7, '+', '*'])).
+
+polish_math(Operands) = polish_math(Operands, []).
+polish_math([], [V]) = V.
+polish_math(['+'|Next], [Operand1, Operand2|Stack]) = polish_math(Next, [Operand1 + Operand2] ++ Stack).
+polish_math(['*'|Next], [Operand1, Operand2|Stack]) = polish_math(Next, [Operand1 * Operand2] ++ Stack).
+polish_math([X|Next], Stack) = polish_math(Next, [X] ++ Stack)
