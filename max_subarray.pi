@@ -1,0 +1,26 @@
+main =>
+    println(max_subarray([1, -10, 1, 100])).
+
+
+max_subarray(A) = max_subarray(A, A[0], A[A.length-1]).
+max_subarray(A, Low, High) = S, Low == High => S = A[Low].
+max_subarray(A, Low, High) = S = max(LeftSum, max(RightSum, CrossSum)) =>
+    Mid = (Low + High) / 2,
+    LeftSum = max_subarray(A, Low, Mid),
+    RightSum = max_subarray(A, Mid + 1, High),
+    CrossSum = max_crosssum(A, Low, Mid, High).
+
+max_crosssum(A, Low, Mid, High) = S =>
+    sum = 0,
+    lsum = -1000000000,
+    foreach (I in Mid .. Low)
+        sum := sum + A[I],
+        sum > lsum => 
+            lsum := sum.
+    sum := 0,
+    rsum = -1000000000,
+    foreach (I in Mid+1 .. High)
+        sum := sum + A[I],
+        sum > rsum =>
+            rsum := sum.
+    S = lsum + rsum.
